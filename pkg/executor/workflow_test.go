@@ -894,7 +894,7 @@ var _ = Describe("Test Workflow", func() {
 
 	It("Workflow test for failed after retries with suspend", func() {
 		By("Test failed-after-retries in StepByStep mode with suspend")
-		featuregatetesting.SetFeatureGateDuringTest(GinkgoT(), utilfeature.DefaultFeatureGate, features.EnableSuspendOnFailure, true)
+		featuregatetesting.SetFeatureGateDuringTest(GinkgoT(), utilfeature.DefaultFeatureGate, features.EnableSuspendOnFailure, false)
 		instance, runners := makeTestCase([]v1alpha1.WorkflowStep{
 			{
 				WorkflowStepBase: v1alpha1.WorkflowStepBase{
